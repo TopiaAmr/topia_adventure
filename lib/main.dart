@@ -1,21 +1,21 @@
+import 'package:flame/flame.dart';
+import 'package:flame/game.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:topia_adventure/topia_adventrure.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Topia\'s Adventure',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Scaffold(),
-    );
+  WidgetsFlutterBinding.ensureInitialized();
+  if (!kIsWeb) {
+    Flame.device.fullScreen();
+    Flame.device.setLandscape();
   }
+  final TopiaAdventrue game = TopiaAdventrue();
+  // Using [kDebugMode] to keep creating new instances
+  // of the game
+  runApp(
+    GameWidget(
+      game: kDebugMode ? TopiaAdventrue() : game,
+    ),
+  );
 }
