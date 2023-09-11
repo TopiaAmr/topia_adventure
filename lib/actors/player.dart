@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
-import 'package:flutter/src/services/keyboard_key.g.dart';
-import 'package:flutter/src/services/raw_keyboard.dart';
+import 'package:flutter/services.dart';
 import 'package:topia_adventure/topia_adventrure.dart';
 
 enum PlayerState {
