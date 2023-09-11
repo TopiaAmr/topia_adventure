@@ -10,7 +10,7 @@ enum PlayerState {
 
 /// Represents a player in the game.
 class Player extends SpriteAnimationGroupComponent
-    with HasGameRef<TopiaAdventrue> {
+    with HasGameRef<TopiaAdventure> {
   late final SpriteAnimation idleAnimation;
   late final SpriteAnimation runAnimation;
 

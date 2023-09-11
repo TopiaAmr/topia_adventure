@@ -10,12 +10,12 @@ void main() {
     Flame.device.fullScreen();
     Flame.device.setLandscape();
   }
-  final TopiaAdventrue game = TopiaAdventrue();
+  final TopiaAdventure game = TopiaAdventure();
   // Using [kDebugMode] to keep creating new instances
   // of the game
   runApp(
     GameWidget(
-      game: kDebugMode ? TopiaAdventrue() : game,
+      game: kDebugMode ? TopiaAdventure() : game,
     ),
   );
 }
