@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:topia_adventure/levels/level.dart';
 
 /// The main game class for Topia Adventure.
 /// Extends the FlameGame class.
-class TopiaAdventure extends FlameGame {
+class TopiaAdventure extends FlameGame with HasKeyboardHandlerComponents {
   @override
   Color backgroundColor() => const Color(0xff211f30);
 
