@@ -4,11 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:topia_adventure/topia_adventrure.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb) {
-    Flame.device.fullScreen();
-    Flame.device.setLandscape();
+    await Flame.device.fullScreen();
+    await Flame.device.setLandscape();
   }
   final TopiaAdventure game = TopiaAdventure();
   // Using [kDebugMode] to keep creating new instances
