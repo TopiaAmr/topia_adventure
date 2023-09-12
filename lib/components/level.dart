@@ -31,7 +31,16 @@ class Level extends World {
     );
     add(level);
 
-    // Retrieve the object layer containing spawnpoints
+    _scrollingBackground();
+    _spawningObjects();
+    _addCollisions();
+
+    return super.onLoad();
+  }
+
+  void _scrollingBackground() {}
+
+  void _spawningObjects() {
     final spLayer = level.tileMap.getLayer<ObjectGroup>('Spawnpoints');
 
     // Iterate through each spawnpoint object
@@ -51,7 +60,9 @@ class Level extends World {
         }
       }
     }
+  }
 
+  void _addCollisions() {
     final collisionsLayer = level.tileMap.getLayer<ObjectGroup>('Collisions');
     if (collisionsLayer != null) {
       for (final collision in collisionsLayer.objects) {
@@ -77,6 +88,5 @@ class Level extends World {
       }
     }
     player.collisionBlocks = collisionBlocks;
-    return super.onLoad();
   }
 }

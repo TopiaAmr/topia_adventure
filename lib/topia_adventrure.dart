@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:topia_adventure/components/player.dart';
 import 'package:topia_adventure/components/level.dart';
@@ -24,7 +25,7 @@ class TopiaAdventure extends FlameGame
   late JoystickComponent joystickComponent;
 
   /// A flag to determine whether to show the joystick.
-  bool showJoyStick = false;
+  bool showJoyStick = !kIsWeb;
   @override
   FutureOr<void> onLoad() async {
     // Load all the required images.
